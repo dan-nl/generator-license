@@ -1,0 +1,26 @@
+{
+  "name": "generator-license",
+  "version": "0.0.0",
+  "description": "yeoman generator that creates a license.txt file in the target project",
+  "author": "dan entous",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dan-nl/generator-license.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/dan-nl/generator-license/issues"
+  },
+  "homepage": "https://github.com/dan-nl/generator-license#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "yeoman-generator": "0.24.1"
+  }
+}
