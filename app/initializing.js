@@ -1,15 +1,32 @@
 'use strict';
 
-function initializing() {
-  if ( this.package_json ) {
+/**
+ * @param {generators.Base} Base
+ * @returns {void}
+ */
+function addPromptAnswersToBase( Base ) {
+  if ( Base.prompt_answers instanceof Object ) {
     return;
   }
 
-  this.package_json = this.fs.readJSON( './package.json' );
+  Base.prompt_answers = {};
+}
 
-  if ( !this.package_json ) {
-    this.package_json = {};
+function addPackageJsonToBase( Base ) {
+  if ( Base.package_json instanceof Object ) {
+    return;
   }
+
+  Base.package_json = Base.fs.readJSON( './package.json' );
+
+  if ( !Base.package_json ) {
+    Base.package_json = {};
+  }
+}
+
+function initializing() {
+  addPackageJsonToBase( this );
+  addPromptAnswersToBase( this );
 }
 
 module.exports = initializing;
