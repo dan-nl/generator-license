@@ -7,7 +7,7 @@ module.exports = function writing() {
     {
       author: this.prompt_answers.author,
       project: this.prompt_answers.project,
-      year: this.prompt_answers.year
+      copyright_year: this.prompt_answers.copyright_year
     }
   );
 };
