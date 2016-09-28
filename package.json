@@ -1,6 +1,6 @@
 {
   "name": "generator-license",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "yeoman generator that creates a license.txt file in the target project",
   "author": "dan entous",
   "license": "MIT",
