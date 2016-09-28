@@ -6,6 +6,10 @@ function initializing() {
   }
 
   this.package_json = this.fs.readJSON( './package.json' );
+
+  if ( !this.package_json ) {
+    this.package_json = {};
+  }
 }
 
 module.exports = initializing;
