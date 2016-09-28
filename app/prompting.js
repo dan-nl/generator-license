@@ -1,32 +1,11 @@
 'use strict';
 
-var fs = require( 'fs' );
-var path = require( 'path' );
-
-function getLicenses() {
-  return fs
-    .readdirSync( path.join( __dirname, 'templates' ) )
-    .reduce(
-      function ( accumulator, value ) {
-        accumulator.push( value.replace( '.txt', '' ) );
-        return accumulator;
-      },
-      []
-    );
-}
-
-function findIndex( licenses, license ) {
-  return licenses.reduce(
-    function( accumulator, value, index ) {
-      if ( value === license ) {
-        accumulator = index;
-      }
-
-      return accumulator;
-    },
-    -1
-  );
-}
+/**
+ * module dependencies
+ */
+var addAnswersToBase = require( './helpers/add-answers-to-base' );
+var getLicenses = require( './helpers/get-licenses' );
+var findIndex = require( './helpers/find-index' );
 
 module.exports = function writing() {
   var prompts = [];
@@ -55,7 +34,7 @@ module.exports = function writing() {
   return this.prompt( prompts )
     .then(
       function ( answers ) {
-        this.prompt_answers = answers;
+        addAnswersToBase( this, answers );
       }.bind( this )
     );
 };
