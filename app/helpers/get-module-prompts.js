@@ -21,6 +21,7 @@ function getModulePrompts( generator ) {
       type: 'input',
       name: 'author',
       message: 'author',
+      store: true,
       default: generator.package_json.author
     },
     {
@@ -34,6 +35,7 @@ function getModulePrompts( generator ) {
       name: 'license',
       message: 'license',
       choices: licenses,
+      store: true,
       default: default_license
     },
     {

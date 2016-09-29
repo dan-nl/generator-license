@@ -5,20 +5,18 @@
  */
 var fs = require( 'fs' );
 var path = require( 'path' );
+var map = require( 'lodash.map' );
 
 /**
  * @returns {Array}
  */
 function getLicenses() {
-  return fs
-    .readdirSync( path.join( __dirname, '..', 'templates' ) )
-    .reduce(
-      function ( accumulator, value ) {
-        accumulator.push( value.replace( '.txt', '' ) );
-        return accumulator;
-      },
-      []
-    );
+  return map(
+    fs.readdirSync( path.join( __dirname, '..', 'templates' ) ),
+    function iteratee( value ) {
+      return value.replace( '.txt', '' );
+    }
+  );
 }
 
 module.exports = getLicenses;

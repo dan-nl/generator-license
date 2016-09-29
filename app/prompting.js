@@ -4,7 +4,7 @@
  * module dependencies
  */
 var getModulePrompts = require( './helpers/get-module-prompts' );
-var promptingHelper = require( 'yeoman-helpers' ).promptingHelper;
+var promptingHelper = require( 'yeoman-prompting-helpers' ).promptingHelper;
 
 /**
  * @returns {Promise}

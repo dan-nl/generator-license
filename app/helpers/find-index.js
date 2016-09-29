@@ -3,7 +3,7 @@
 /**
  * module dependencies
  */
-var _ = require( 'lodash' );
+var _findIndex = require( 'lodash.findindex' );
 
 /**
  * @param {Array} collection
@@ -12,7 +12,7 @@ var _ = require( 'lodash' );
  * @returns {Array}
  */
 function findIndex( collection, target ) {
-  return _.findIndex(
+  return _findIndex(
     collection,
     function( item ) {
       return item === target;

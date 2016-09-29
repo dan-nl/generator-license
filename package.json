@@ -21,8 +21,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "lodash": "4.16.2",
+    "lodash.findindex": "4.6.0",
+    "lodash.map": "4.6.0",
     "yeoman-generator": "0.24.1",
-    "yeoman-helpers": "git://github.com/dan-nl/yeoman-helpers.git"
+    "yeoman-prompting-helpers": "git://github.com/dan-nl/yeoman-prompting-helpers.git"
   }
 }

@@ -3,13 +3,18 @@
 /**
  * module dependencies
  */
-var initializingHelper = require( 'yeoman-helpers' ).initializingHelper;
+var addPrompts = require( 'yeoman-prompting-helpers' ).addPrompts;
 
 /**
  * @returns {void}
  */
 function initializing() {
-  initializingHelper( this );
+  this.package_json =
+    this.package_json ||
+    this.fs.readJSON( './package.json' ) ||
+    '{}';
+
+  this.options.prompts = addPrompts( this );
 }
 
 module.exports = initializing;
