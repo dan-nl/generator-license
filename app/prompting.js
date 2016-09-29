@@ -3,7 +3,7 @@
 /**
  * module dependencies
  */
-var getModulePrompts = require( './helpers/get-module-prompts' );
+var getModulePrompts = require( './helpers/get-generator-prompts' );
 var promptingHelper = require( 'yeoman-prompting-helpers' ).promptingHelper;
 
 /**

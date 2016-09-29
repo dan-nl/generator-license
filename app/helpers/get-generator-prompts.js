@@ -8,7 +8,7 @@ var findIndex = require( './find-index' );
  *
  * @returns {Array}
  */
-function getModulePrompts( generator ) {
+function getGeneratorPrompts( generator ) {
   var licenses = getLicenses();
   var default_license = 'mit';
 
@@ -47,4 +47,4 @@ function getModulePrompts( generator ) {
   ];
 }
 
-module.exports = getModulePrompts;
+module.exports = getGeneratorPrompts;
