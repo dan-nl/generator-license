@@ -1,21 +1,23 @@
 'use strict';
 
 /**
- * @param {Array} licenses
- * @param {string} license
+ * module dependencies
+ */
+var _ = require( 'lodash' );
+
+/**
+ * @param {Array} collection
+ * @param {string} target
+ *
  * @returns {Array}
  */
-function findIndex( licenses, license ) {
-  return licenses.reduce(
-    function ( accumulator, value, index ) {
-      if ( value === license ) {
-        accumulator = index;
-      }
-
-      return accumulator;
-    },
-    -1
-  );
+function findIndex( collection, target ) {
+  return _.findIndex(
+    collection,
+    function( item ) {
+      return item === target;
+    }
+  )
 }
 
 module.exports = findIndex;
