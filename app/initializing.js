@@ -1,16 +1,18 @@
+/* eslint no-invalid-this: off */
+
 'use strict';
 
 /**
  * module dependencies
  */
-var addPrompts = require( 'yeoman-prompting-helpers' ).addPrompts;
+var createPromptAnswers = require( 'yeoman-prompting-helpers' ).createPromptAnswers;
 
 /**
- * @returns {void}
+ * @returns {undefined}
  */
 function initializing() {
   this.package_json = this.package_json || this.fs.readJSON( './package.json' ) || '{}';
-  this.options.prompts = addPrompts( this );
+  this.options.PromptAnswers = createPromptAnswers( this.options.PromptAnswers );
 }
 
 module.exports = initializing;

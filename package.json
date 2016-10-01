@@ -18,12 +18,17 @@
   },
   "homepage": "https://github.com/dan-nl/generator-license#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint ."
   },
   "dependencies": {
     "lodash.findindex": "4.6.0",
     "lodash.map": "4.6.0",
     "yeoman-generator": "0.24.1",
     "yeoman-prompting-helpers": "git://github.com/dan-nl/yeoman-prompting-helpers.git"
+  },
+  "devDependencies": {
+    "eslint": "3.7.0",
+    "eslint-config-dan-nl": "git://github.com/dan-nl/eslint-config-dan-nl.git"
   }
 }

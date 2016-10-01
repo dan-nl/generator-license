@@ -1,11 +1,13 @@
 'use strict';
 
+/**
+ * module dependencies
+ */
 var getLicenses = require( './get-licenses' );
 var findIndex = require( './find-index' );
 
 /**
  * @param {Object} generator
- *
  * @returns {Array}
  */
 function getGeneratorPrompts( generator ) {
@@ -18,31 +20,31 @@ function getGeneratorPrompts( generator ) {
 
   return [
     {
-      type: 'input',
-      name: 'author',
+      default: generator.package_json.author,
       message: 'author',
+      name: 'author',
       store: true,
-      default: generator.package_json.author
+      type: 'input'
     },
     {
-      type: 'input',
-      name: 'project',
+      default: generator.package_json.name,
       message: 'project',
-      default: generator.package_json.name
+      name: 'project',
+      type: 'input'
     },
     {
-      type: 'list',
-      name: 'license',
-      message: 'license',
       choices: licenses,
+      default: default_license,
+      message: 'license',
+      name: 'license',
       store: true,
-      default: default_license
+      type: 'list'
     },
     {
-      type: 'input',
-      name: 'copyright_year',
+      default: new Date().getUTCFullYear(),
       message: 'copyright year',
-      default: new Date().getUTCFullYear()
+      name: 'copyright_year',
+      type: 'input'
     }
   ];
 }

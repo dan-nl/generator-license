@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: off */
+
 'use strict';
 
 /**
@@ -14,10 +16,10 @@ var _findIndex = require( 'lodash.findindex' );
 function findIndex( collection, target ) {
   return _findIndex(
     collection,
-    function( item ) {
+    function ( item ) {
       return item === target;
     }
-  )
+  );
 }
 
 module.exports = findIndex;

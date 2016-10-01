@@ -1,16 +1,18 @@
+/* eslint no-sync: off, no-invalid-this: off */
+
 'use strict';
 
 /**
- * @returns {void}
+ * @returns {undefined}
  */
 function writing() {
   this.fs.copyTpl(
-    this.templatePath( this.options.prompts.get( 'license' ) + '.txt' ),
+    this.templatePath( this.options.PromptAnswers.get( 'license' ) + '.txt' ),
     this.destinationPath( './license.txt' ),
     {
-      author: this.options.prompts.get( 'author' ),
-      copyright_year: this.options.prompts.get( 'copyright_year' ),
-      project: this.options.prompts.get( 'project' )
+      author: this.options.PromptAnswers.get( 'author' ),
+      copyright_year: this.options.PromptAnswers.get( 'copyright_year' ),
+      project: this.options.PromptAnswers.get( 'project' )
     }
   );
 }
