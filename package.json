@@ -5,6 +5,9 @@
   "author": "dan entous",
   "license": "MIT",
   "main": "app/index.js",
+  "files": [
+    "app"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dan-nl/generator-license.git"
