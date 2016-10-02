@@ -5,14 +5,15 @@
 /**
  * module dependencies
  */
+var loadJson = require( 'yeoman-helpers' ).loadJson;
 var PromptAnswers = require( 'yeoman-prompting-helpers' ).PromptAnswers;
 
 /**
  * @returns {undefined}
  */
 function initializing() {
-  this.package_json = this.package_json || this.fs.readJSON( './package.json' ) || '{}';
   this.options.PromptAnswers = this.options.PromptAnswers || new PromptAnswers();
+  this.package_json = loadJson( this.destinationPath( 'package.json' ), { sync: true } );
 }
 
 module.exports = initializing;

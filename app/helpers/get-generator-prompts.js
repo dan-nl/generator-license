@@ -37,7 +37,6 @@ function getGeneratorPrompts( generator ) {
       default: default_license,
       message: 'license',
       name: 'license',
-      store: true,
       type: 'list'
     },
     {
