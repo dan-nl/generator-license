@@ -5,6 +5,7 @@
  */
 var getLicenses = require( './get-licenses' );
 var findIndex = require( './find-index' );
+var loadJson = require( 'yeoman-helpers' ).loadJson;
 
 /**
  * @param {Object} generator
@@ -13,37 +14,57 @@ var findIndex = require( './find-index' );
 function getGeneratorPrompts( generator ) {
   var licenses = getLicenses();
   var default_license = 'mit';
+  var package_json;
 
-  if ( typeof generator.package_json.license === 'string' ) {
-    default_license = findIndex( licenses, generator.package_json.license.toLowerCase() );
+  package_json = loadJson( generator.destinationPath( 'package.json' ), { sync: true } );
+
+  if ( typeof package_json.license === 'string' ) {
+    default_license = findIndex( licenses, package_json.license.toLowerCase() );
   }
 
   return [
     {
-      default: generator.package_json.author,
+      message: 'create license.txt',
+      name: 'create-license',
+      type: 'confirm'
+    },
+    {
+      default: package_json.author,
       message: 'author',
       name: 'author',
       store: true,
-      type: 'input'
+      type: 'input',
+      when: function ( answers ) {
+        return answers[ 'create-license' ];
+      }
     },
     {
-      default: generator.package_json.name,
+      default: package_json.name,
       message: 'project',
       name: 'project',
-      type: 'input'
+      type: 'input',
+      when: function ( answers ) {
+        return answers[ 'create-license' ];
+      }
     },
     {
       choices: licenses,
       default: default_license,
       message: 'license',
       name: 'license',
-      type: 'list'
+      type: 'list',
+      when: function ( answers ) {
+        return answers[ 'create-license' ];
+      }
     },
     {
       default: new Date().getUTCFullYear(),
       message: 'copyright year',
       name: 'copyright_year',
-      type: 'input'
+      type: 'input',
+      when: function ( answers ) {
+        return answers[ 'create-license' ];
+      }
     }
   ];
 }

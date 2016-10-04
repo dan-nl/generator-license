@@ -6,6 +6,10 @@
  * @returns {undefined}
  */
 function writing() {
+  if ( !this.options.PromptAnswers.get( 'create-license' ) ) {
+    return;
+  }
+
   this.fs.copyTpl(
     this.templatePath( this.options.PromptAnswers.get( 'license' ) + '.txt' ),
     this.destinationPath( './license.txt' ),

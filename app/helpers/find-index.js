@@ -11,7 +11,7 @@ var _findIndex = require( 'lodash.findindex' );
  * @param {Array} collection
  * @param {string} target
  *
- * @returns {Array}
+ * @returns {number}
  */
 function findIndex( collection, target ) {
   return _findIndex(
