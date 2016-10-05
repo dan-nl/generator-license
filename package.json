@@ -33,7 +33,7 @@
     "yeoman-prompting-helpers": "git://github.com/dan-nl/yeoman-prompting-helpers.git"
   },
   "devDependencies": {
-    "eslint": "3.7.0",
+    "eslint": "3.7.1",
     "eslint-config-dan-nl": "git://github.com/dan-nl/eslint-config-dan-nl.git"
   }
 }
